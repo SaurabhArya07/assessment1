@@ -36,7 +36,12 @@ public class Accounts {
 	}
 	
 	public void withdraw(double amount) {
-		balance = balance - amount;		
+		if(amount < balance) {
+			balance = balance - amount;
+		}
+		else {
+			System.out.println("Current Amount is greater than your balance, transaction not possible!!");
+		}
 	}
 	
 	public boolean search(String name) {
